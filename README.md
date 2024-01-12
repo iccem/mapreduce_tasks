@@ -23,16 +23,16 @@ To shuffle the records, append a random number to each identifier, sort the enti
 Note: This is a sample solution for a Hadoop Streaming task that involves shuffling and randomization of identifiers within a given list. The input data consists of a list of identifiers, and the output format requires each line to contain a random number of identifiers separated by commas. The sorting process involves appending random numbers to each identifier, sorting the list based on these numbers, and then discarding the additional numbers. This solution provides an illustrative example of how to approach such a task using Hadoop Streaming.
 
 Task2
-Требуется посчитать число вхождений имен собственных длиной от 6 до 9 символов.  
+The task at hand involves counting the occurrences of proper names with a length ranging from 6 to 9 characters.
 
-Имя собственное - это слово, которое начинается с заглавной буквы и у которого все последующие буквы строчные, дополнительное условие -- это слово ни разу не встречается в корпусе текстов начинающимся со строчной буквы.
+A proper name is a word that begins with a capital letter, and all subsequent letters are lowercase. An additional condition is that the word does not appear anywhere in the corpus of texts beginning with a lowercase letter.
 
-Текст необходимо очистить от знаков пунктуации, привести к нижнему регистру и отсортировать по убыванию числа вхождений, в случае равенства - отсортировать лексикографически.
+The text needs to be cleaned of punctuation marks, converted to lowercase, and sorted in descending order based on the count of occurrences. In the case of ties, lexicographical sorting should be applied.
 
-Пробелами считаем стандартные пробельные символы [ \t\n\r\f\v] или их последовательность.
+Spaces are defined as standard whitespace characters [ \t\n\r\f\v] or their sequences.
 
-При решении задач требуется использовать использовать как можно меньшее кол-во Hadoop Job, использовать больше, чем 1 reducer (1 reducer разрешается использовать только в финальной job'е, при сортировке результата).
+In solving the tasks, it is required to use as few Hadoop Jobs as possible and utilize more than 1 reducer (using only 1 reducer is allowed only in the final job when sorting the result).
 
-Входные данные: википедия.
-Формат вывода в HDFS: имя  количество
-Вывод на печать: топ 10 имен.
+Input data: Wikipedia.
+Output format in HDFS: name  count
+Print output: top 10 names.
