@@ -2,8 +2,6 @@
 Project Description: Hadoop Streaming Task Solution
 
 Task1
-Implementing a solution for a task using Hadoop Streaming.
-
 Problem Statement:
 Shuffle a list of identifiers randomly. Subsequently, for each line, write a comma-separated random number of identifiers, ranging from 1 to 5.
 
@@ -21,6 +19,7 @@ Procedure:
 To shuffle the records, append a random number to each identifier, sort the entire list based on this number, and then discard the additional number.
 
 Note: This is a sample solution for a Hadoop Streaming task that involves shuffling and randomization of identifiers within a given list. The input data consists of a list of identifiers, and the output format requires each line to contain a random number of identifiers separated by commas. The sorting process involves appending random numbers to each identifier, sorting the list based on these numbers, and then discarding the additional numbers. This solution provides an illustrative example of how to approach such a task using Hadoop Streaming.
+
 
 Task2
 The task at hand involves counting the occurrences of proper names with a length ranging from 6 to 9 characters.
