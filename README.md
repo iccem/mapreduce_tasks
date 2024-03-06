@@ -1,37 +1,30 @@
-# mapreduce_tasks
-Project Description: Hadoop Streaming Task Solution
+# Hadoop (pet-project)
 
-Task1
-Problem Statement:
-Shuffle a list of identifiers randomly. Subsequently, for each line, write a comma-separated random number of identifiers, ranging from 1 to 5.
+## **Task1**
+Скрипт перемешивает список идентификаторов в случайном порядке. В каждой строке выводит через запятую случайное число идентификаторов - от 1 до 5.
 
-Input Data:
-List of identifiers.
-Format: Text, one identifier per line.
+Входные данные: список идентификаторов.
+Формат вывода: id1,id2,...
+Вывод на печать: первые 50 строк.
 
-Output Format:
-id1,id2,...
-
-Print Output:
-The first 50 lines.
-
-Procedure:
-To shuffle the records, append a random number to each identifier, sort the entire list based on this number, and then discard the additional number.
-
-Note: This is a sample solution for a Hadoop Streaming task that involves shuffling and randomization of identifiers within a given list. The input data consists of a list of identifiers, and the output format requires each line to contain a random number of identifiers separated by commas. The sorting process involves appending random numbers to each identifier, sorting the list based on these numbers, and then discarding the additional numbers. This solution provides an illustrative example of how to approach such a task using Hadoop Streaming.
+Пример вывода:
+1cf54b530128257d72,4cdf3efa01036a9a48,8c3e7fb30261aaf9cf
+4cfe6230016553c3ed,76e1b8690176f801bb,e7409c39013c9db7b4,a5f1519c02b22550e6
+83a119ef02346d0879
 
 
-Task2
-The task at hand involves counting the occurrences of proper names with a length ranging from 6 to 9 characters.
+## **Task2**
+Скрипт находит и считает число вхождений имен собственных (первый символ uppercase, остальные lowcase) длиной от 6 до 9 символов. 
+Имя собственное учитывается, только если оно ни разу не встретилось в корпусе текстов, начинающимся с первой строчной буквы.
+Текст очищается от знаков пунктуации. 
+Результат приводится к нижнему регистру и сортируется по убыванию числа вхождений, в случае равенства - лексикографически.
 
-A proper name is a word that begins with a capital letter, and all subsequent letters are lowercase. An additional condition is that the word does not appear anywhere in the corpus of texts beginning with a lowercase letter.
+Входные данные: тексты википедии.
+Формат вывода в HDFS: имя  количество
+Вывод на печать: топ10 имен.
 
-The text needs to be cleaned of punctuation marks, converted to lowercase, and sorted in descending order based on the count of occurrences. In the case of ties, lexicographical sorting should be applied.
+Пример вывода:
 
-Spaces are defined as standard whitespace characters [ \t\n\r\f\v] or their sequences.
-
-In solving the tasks, it is required to use as few Hadoop Jobs as possible and utilize more than 1 reducer (using only 1 reducer is allowed only in the final job when sorting the result).
-
-Input data: Wikipedia.
-Output format in HDFS: name  count
-Print output: top 10 names.
+english 8358
+states  7264
+british 6829
